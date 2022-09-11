@@ -7,3 +7,4 @@ print ("--------------------")
 print ("Notes:enak turu")
 print ("Halo Dunia")
 print ("Ini adalah script bash pertamaku di Linux")
+# 21083010070
