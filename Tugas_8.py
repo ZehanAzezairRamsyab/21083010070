@@ -11,32 +11,35 @@ def cetak(i):
 
 n=int(input("Masukkan angka untuk batasan perulangan: "))
 
-#SEKUENSIAL
+print ("SEKUENSIAL")
+print (" ")
 sekuensial_awal = time()
-print("Sekuensial".center(50,"="))
 for i in range(n):
    cetak(i)
 sekuensial_akhir=time()
+print (" ")
 
-#MULTIPROCESSING DENGAN KELAS PROCESS
+print ("MULTIPROCESSING DENGAN KELAS PROCESS")
+print (" ")
 process_awal=time()
-print("Multiprocess.process".center(50,"="))
 for i in range(n):
     p=Process(target=cetak, args=(i, ))
     p.start()
     p.join()
 process_akhir=time()
+print (" ")
 
-#MULTIPROCESSING DENGAN KELAS POOL
+print ("MULTIPROCESSING DENGAN KELAS POOL")
+print (" ")
 pool_awal=time()
 pool = Pool()
-print("Multiprocess.pool".center(50,"="))
 pool.map(cetak,range(0,n))
 pool.close()
 pool_akhir=time()
+print (" ")
 
-#BANDIGKAN WAKTU EKSEKUSI
-print("Perbandingan waktu".center(50,"="))
+print ("BANDIGKAN WAKTU EKSEKUSI")
+print (" ")
 print("Waktu eksekusi Sekuensial:", sekuensial_akhir - sekuensial_awal, "detik")
 print("Waktu eksekusi multiprocessing.Process:", process_akhir - process_awal, "detik")
 print("Waktu eksekusi multiprocessing.Pool:", pool_akhir - pool_awal, "detik")
